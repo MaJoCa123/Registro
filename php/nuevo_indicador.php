@@ -4,7 +4,7 @@
 		header('location:index.php');
 	}
 	include'head.php';
-	#incluyo el archivo donde esta la consulta
+	#incluyo el archivo donde esta la consulta sql 
 	include'../consultas/sector.php';
 	require_once'header.php';
  ?>
@@ -56,8 +56,8 @@
 
 
 						<label for="SECTOR">SECTOR: </label>
-
-						
+		
+						<!-- itero la variable sector -->				
 						<select  name="SECTOR" required><br><br>
 							<?php while($fila=mysqli_fetch_array($sector)): ?>
 								<option value="<?=$fila['id_sector']?>"><?=$fila['sector']?></option>
