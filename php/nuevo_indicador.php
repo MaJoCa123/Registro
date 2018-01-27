@@ -3,7 +3,9 @@
 	if (!isset($_SESSION['user'])) {
 		header('location:index.php');
 	}
-	include'head.php';	
+	include'head.php';
+	#incluyo el archivo donde esta la consulta
+	include'../consultas/sector.php';
 	require_once'header.php';
  ?>
 
@@ -54,27 +56,34 @@
 
 
 						<label for="SECTOR">SECTOR: </label>
-					<select  name="SECTOR" required><br><br>
-						<option value="SECTOR-1A">SECTOR-1A</option>
-						<option value="SECTOR-1B">SECTOR-1B</option>  
-						<option value="SECTOR-2">SECTOR-2</option> 
-						<option value="SECTOR-3A">SECTOR-3A</option>
-						<option value="SECTOR-3B">SECTOR-3B</option> 
-						<option value="SECTOR-4">SECTOR-4</option> 
-						<option value="SECTOR-5">SECTOR-5</option>
-						<option value="SECTOR-6">SECTOR-6</option>   
-						<option value="SECTOR-7A">SECTOR-7A</option> 
-						<option value="SECTOR-7B">SECTOR-7B</option>
-						<option value="SECTOR-8">SECTOR-8</option> 
-						<option value="SECTOR-71">SECTOR-71</option>
-						<option value="SECTOR-72">SECTOR-72</option>
-						<option value="SECTOR-80">SECTOR-80</option>
-						<option value="SECTOR-81">SECTOR-81</option>
-						<option value="SECTOR-82">SECTOR-82</option> 
-						<option value="SECTOR 83">SECTOR-82</option>
-						<option value="SECTOR-84">SECTOR-81</option>   
 
-					</select>  
+						
+						<select  name="SECTOR" required><br><br>
+							<?php while($fila=mysqli_fetch_array($sector)): ?>
+								<option value="<?=$fila['id_sector']?>"><?=$fila['sector']?></option>
+							<?php endwhile; ?>
+						</select>
+							<!--
+							<option value="SECTOR-1A">SECTOR-1A</option>
+							<option value="SECTOR-1B">SECTOR-1B</option>  
+							<option value="SECTOR-2">SECTOR-2</option> 
+							<option value="SECTOR-3A">SECTOR-3A</option>
+							<option value="SECTOR-3B">SECTOR-3B</option> 
+							<option value="SECTOR-4">SECTOR-4</option> 
+							<option value="SECTOR-5">SECTOR-5</option>
+							<option value="SECTOR-6">SECTOR-6</option>   
+							<option value="SECTOR-7A">SECTOR-7A</option> 
+							<option value="SECTOR-7B">SECTOR-7B</option>
+							<option value="SECTOR-8">SECTOR-8</option> 
+							<option value="SECTOR-71">SECTOR-71</option>
+							<option value="SECTOR-72">SECTOR-72</option>
+							<option value="SECTOR-80">SECTOR-80</option>
+							<option value="SECTOR-81">SECTOR-81</option>
+							<option value="SECTOR-82">SECTOR-82</option> 
+							<option value="SECTOR 83">SECTOR-82</option>
+							<option value="SECTOR-84">SECTOR-81</option>  
+							--> 
+						 
 
 
 						<label for="DEPENDENCIA">DEPENDENCIA: </label>
