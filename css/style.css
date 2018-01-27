@@ -1,0 +1,122 @@
+* {
+	margin: 0 auto;
+	padding:0;
+}
+body,header,a,section,form,footer{
+	text-align: center;
+	display: block;
+}
+
+
+/*******MENU.PHP********/
+#header-user{
+	text-align: right;
+}
+a,li{
+	text-decoration: none;
+	display: inline-block;
+}
+li{
+	margin: 1em;
+}
+a{
+	padding: 1em;
+	border-radius: .5em;
+	color:  #113881e6;
+}
+hr{
+	border: 1px solid var(--gris);
+	margin: 1em;
+}
+#img-photo{
+	vertical-align: center;
+}
+.img-user{
+    border-radius: 50%;
+    height: 3em;
+    width: 3em;
+}
+span>a{
+	padding: 0.7em;	
+}
+.close-session{
+	background: #113881e6;
+	color: white;
+}
+header{
+	margin: 2em;
+	padding: 1em;
+}
+
+/*----ALTA_USUARIOS.PHP---*/
+.input-user-login{
+	display: block;
+	padding: 1em;
+	margin-bottom: 1em;
+	font-family: 'Nunito', sans-serif;
+	width: 28em;
+}
+.input-user{
+	
+	padding: 1em;
+	margin: 2em;
+	font-family: 'Nunito', sans-serif;
+	width: 20em;
+}
+.input-user-radio{
+	display: inline-block;
+	padding: 1em;
+	margin: 1.8em;
+	font-family: 'Nunito', sans-serif;
+	width: 28em;
+}
+/*aslknsndal*/
+
+.input-user-nuevo{
+	display: block;
+	padding: 1em;
+	margin-bottom: 1em;
+	font-family: 'Nunito', sans-serif;
+	width: 28em;
+}
+.input-user-radio-nvo{
+	display: inline-block;
+	padding: 1em;
+	margin: 1.8em;
+	font-family: 'Nunito', sans-serif;
+	/*width: 28em;*/
+}
+
+
+/*aksjbsdajbkdsa]*/
+
+
+
+.input-submit{
+	background: #06193de6;
+	color: white;
+	padding: 1em;
+	border-radius: .5em;
+	display: inline-block;
+	margin: 1em;
+}
+#form-alta-user{
+	background: var(--white-form);
+	width: 30em;
+	color: var(--negro-letra);
+}
+#legend-alta{
+	
+	font-size: 1.5em;
+}
+.titulo{
+	/*margin: 1em;*/
+	padding: 0.5em;
+	text-align: left;
+}
+label{
+	text-align: left;
+	font-family: 'Nunito', sans-serif;
+	margin: 1em;
+	font-size: 1.2em;
+}
