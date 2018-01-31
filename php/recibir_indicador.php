@@ -7,11 +7,16 @@
 		$NUMERO = $_POST ['NUMERO'];
 		$SICE = $_POST ['SICE'];
 		$DGCC = $_POST ['DGCC'];
-		$DUURR = $_POST ['DUURR'];
+		$DUURR = $_POST ['id_duur'];
 		$ZONA = $_POST ['ZONA'];
-		$SECTOR = $_POST ['SECTOR'];
+		$SECTOR = $_POST ['id_sector'];
 		$DEPENDENCIA = $_POST ['DEPENDENCIA'];
-		$ACCIONAR = $_POST ['ACCIONAR'];
+		$ACCIONAR = $_POST ['id_accionar'];
+		$MEJORA=$_POST['id_mejora'];
+		$COMUNITARIO= $_POST['id_comunitario'];
+		$EDUCATIVO=$_POST['id_educativo'];
+		$POLICIAL=$_POST['id_policial'];
+		$AGRADECIMIENTO=$_POST['id_agradecimiento'];
 		$FECHA = $_POST ['FECHA'];
 		$DETALLE = $_POST ['DETALLE'];
 		$CANT_BENEF = $_POST ['CANT_BENEF'];
@@ -20,43 +25,22 @@
 		$PERSONAL = $_POST ['PERSONAL'];
 
 
-
-   	//recorremos el array de cervezas seleccionadas. No olvidarse q la primera posición de un array es la 0 
-		print_r($DUURR);
-		print_r($SECTOR);
-		print_r($ACCIONAR);
-
-   	// for ($i=0;$i<count($DUURR);$i++) 
-    //   	{ 
-    //   	echo "<br> DUURR " . $i . ": " . $DUURR[$i]; 
-    //   	} 
-
-    //  for ($i=0;$i<count($SECTOR);$i++) 
-    //   	{ 
-    //   	echo "<br> SECTOR " . $i . ": " . $SECTOR[$i]; 
-    //   	}
-
-     // for ($i=0;$i<count($ACCIONAR);$i++) 
-     //  	{
-
-     //  	echo "<br> ACCIONAR " . $i . ": " . $ACCIONAR[$i]; 
-     //  	}
   
 
 
-		if (isset($NUMERO)&&isset($SICE)&&isset($DGCC)&&isset($DUURR)&&isset($ZONA)&&isset($SECTOR)&&isset($DEPENDENCIA)&&isset($ACCIONAR)&&isset($FECHA)&&isset($DETALLE)&&isset($CANT_BENEF)&&isset($DEPEND_INTERV)&&isset($FECHACARGA)&&isset($PERSONAL))
+		if (isset($NUMERO)&&isset($SICE)&&isset($DGCC)&&isset($DUURR)&&isset($ZONA)&&isset($SECTOR)&&isset($DEPENDENCIA)&&isset($ACCIONAR)&&isset($MEJORA)&&isset($COMUNITARIO)&&isset($EDUCATIVO)&&isset($POLICIAL)&&isset($AGRADECIMIENTO)&&isset($FECHA)&&isset($DETALLE)&&isset($CANT_BENEF)&&isset($DEPEND_INTERV)&&isset($FECHACARGA)&&isset($PERSONAL))
 		{
 
 				
 				require_once'conexion.php';
 				$conexion = conectar();
-				$sql="INSERT INTO indicadores (NUMERO,SICE, DGCC, DUURR, ZONA, SECTOR, DEPENDENCIA, ACCIONAR, FECHA, DETALLE, CANT_BENEF, DEPEND_INTERV, FECHA_CARGA, PERSONAL)
-				VALUES ('$NUMERO','$SICE', '$DGCC', '$DUURR', '$ZONA','$SECTOR','$DEPENDENCIA', '$ACCIONAR','$FECHA','$DETALLE','$CANT_BENEF','$DEPEND_INTERV','$FECHACARGA','$PERSONAL')";
+				$sql="INSERT INTO INSERT INTO `indicadores`( `NUMERO`, `SICE`, `DGCC`, `id_duur`, `ZONA`, `id_sector`, `DEPENDENCIA`, `id_accionar`, `id_mejora`, `id_comunitario`, `id_educativo`, `id_policial`, `id_agradecimiento`, `FECHA`, `DETALLE`, `CANT_BENEF`, `DEPEND_INTERV`, `FECHA_CARGA`, `PERSONAL`) VALUES ('$NUMERO', '$SICE', '$DGCC', '$DUURR', '$ZONA', '$SECTOR', '$DEPENDENCIA', '$ACCIONAR', '$MEJORA', '$COMUNITARIO', '$EDUCATIVO', '$POLICIAL', '$AGRADECIMIENTO', '$FECHA', '$DETALLE', '$CANT_BENEF', '$DEPEND_INTERV', '$FECHACARGA', '$PERSONAL'  ";
+				echo $sql;
 
 				$result_insert=mysqli_query($conexion , $sql);
 				if ($result_insert){
 					echo "<h2> Se registraron los datos correctamente del Nuevo Indicador </h2>";
-					header ('location:Indicadores.php');
+					//header ('location:Indicadores.php');
 					
 				}else {
 
@@ -73,7 +57,7 @@
 					
 		}else{
 		echo "<h2> Algunos de los campos no se compelto correctamente por favor revise e intente nuevamente";
-		header ('refresh:2; index.php');
+		//header ('refresh:2; index.php');
 		}
 
 

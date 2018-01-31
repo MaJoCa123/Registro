@@ -11,10 +11,10 @@
 	<section id="section-listado">	
 	
 	
- 	<table border="2">
+ 	<table border="1">
 		<tr>
 			<th>NUMERO</th><th>SICE</th><th>DGCC</th><th>DUURR</th><th>ZONA</th><th>SECTOR</th>
-			<th>DEPENDENCIA</th><th>ACCIONAR</th><th>FECHA</th><th>DETALLE</th><th>CANT_BENEF</th>
+			<th>DEPENDENCIA</th><th>ACCIONAR</th><th>ACCIONAR MEJORA</th><th>ACERCAMIENTO COMUNITARIO</th><th>ACCIONAR EDUCATIVO</th><th>ACCIONAR POLICIAL</th><th>AGRADECIMIENTO</th><th>FECHA</th><th>DETALLE</th><th>CANT_BENEF</th>
 			<th>DEPEND_INTERV</th><th>FECHA DE CARGA</th><th>PERSONAL</th>
 		</tr>		
 <?php 
@@ -33,6 +33,11 @@
  			      <td>'.$fila["SECTOR"].'</td>
  			      <td>'.$fila["DEPENDENCIA"].'</td>
  			      <td>'.$fila["ACCIONAR"].'</td>
+ 			      <td>'.$fila["ACCIONAR_MEJORA"].'</td>
+ 			      <td>'.$fila["ACERCAMIENTO_COMUNITARIO"].'</td>
+ 			      <td>'.$fila["ACCIONAR_EDUCATIVO"].'</td>
+ 			      <td>'.$fila["ACCIONAR_POLICIAL"].'</td>
+ 			      <td>'.$fila["AGRADECIMIENTO"].'</td>
  			      <td>'.$fila["FECHA"].'</td>
  			      <td>'.$fila["DETALLE"].'</td>
  			      <td>'.$fila["CANT_BENEF"].'</td>

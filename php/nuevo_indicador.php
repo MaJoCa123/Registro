@@ -5,8 +5,16 @@
 	}
 
 	include'head.php';
-	#incluyo el archivo donde esta la consulta sql 
+	#incluyo el archivo donde esta la consulta sql
+	include'../consultas/duur.php'; 
 	include'../consultas/sector.php';
+	include'../consultas/accionar.php';
+	include'../consultas/mejora.php';
+	include'../consultas/educativo.php';
+	include'../consultas/policial.php';
+	include'../consultas/comunitario.php';
+	include'../consultas/agradecimiento.php';
+
 
 	require_once'header.php';
  ?>
@@ -31,34 +39,26 @@
 						<input type="text" id="DGCC" name="DGCC"><br><br>
 
 
-						<label for="DUUR">DUUR: </label><select  name="DUURR" required><br><br>
-						<option value="DUURR-1">DUURR-1</option> 
-   						<option value="DUURR-2">DUURR-2</option> 
-   						<option value="DUURR-3">DUURR-3</option>
-   						<option value="DUURR-4">DUURR-4</option> 
-  						<option value="DUURR-5">DUURR-5</option> 
-   						<option value="DUURR-6">DUURR-6</option> 
-   						<option value="SUB JEFATURA">SUB JEFATURA</option> 
-   						<option value="SECRETARIA">SECRETARIA</option> 
-   						<option value="INSTITUCIONALES">INSTITUCIONALES</option>
-   						<option value="SEGURIDAD">SEGURIDAD</option> 
-  						<option value="INVESTIGACIONES">INVESTIGACIONES</option>  
-  						<option value="DROGAS">DROGAS</option> 
-   						<option value="EDUCACION">EDUCACION</option> 
-   						<option value="ESTRATEGIAS">ESTRATEGIAS</option>
-   						<option value="RRHH">RRHH</option> 
-  						<option value="ADMINISTRACION">ADMINISTRACION</option> 
-   						<option value="TECNOLOGIA">TECNOLOGIA</option> 
-   						<option value="JURIDICO">JURIDICO</option>
-  						</select>
+
+						
+						<label for="id_duur">DUUR: </label>
+						<!-- itero la variable sector -->				
+						<select  name="id_duur" required><br><br>
+							<?php while($fila=mysqli_fetch_array($duur)): ?>
+								<option value="<?=$fila['id_duur']?>"><?=$fila['duur']?></option>
+							<?php endwhile; ?>
+						</select>
+						 
+
 
 							
 						<label for="ZONA">ZONA: </label>
 						<input type="text" id="ZONA" name="ZONA"><br><br>
 
-		
+						
+						<label for="id_sector">SECTOR: </label>
 						<!-- itero la variable sector -->				
-						<select  name="SECTOR" required><br><br>
+						<select  name="id_sector" required><br><br>
 							<?php while($fila=mysqli_fetch_array($sector)): ?>
 								<option value="<?=$fila['id_sector']?>"><?=$fila['sector']?></option>
 							<?php endwhile; ?>
@@ -322,21 +322,6 @@
 						<option value="DESTACAMENTO PALERMO OESTE-UR6-">SECTOR-82</option>
 						<option value="DESTACAMENTO LURACATAO-UR6-">SECTOR-82</option>
 
-
-						
-						
-						
-
-
-
-
-
-
-
-
-
-
-
 					</select>  
 
 
@@ -345,41 +330,77 @@
 
 
 
+						<label for="id_accionar">ACCIONAR: </label>
+						<!-- itero la variable sector -->				
+						<select  name="id_accionar" required><br><br>
+							<?php while($fila=mysqli_fetch_array($accionar)): ?>
+								<option value="<?=$fila['id_accionar']?>"><?=$fila['accionar']?></option>
+							<?php endwhile; ?>
+						</select><br><br>
+						 
+						 <p>Colocar guion si no corresponde</p><br>
+
+
+						 <label for="id_mejora">ACCIONAR DE MEJORA: </label>
+						<!-- itero la variable sector -->				
+						<select  name="id_mejora" required><br><br>
+							<?php while($fila=mysqli_fetch_array($mejora)): ?>
+								<option value="<?=$fila['id_mejora']?>"><?=$fila['mejora']?></option>
+							<?php endwhile; ?>
+						</select><br>
+						 
+												 
+
+
+						<label for="id_comunitario">ACERCAMIENTO COMUNITARIO: </label>
+						<!-- itero la variable sector -->				
+						<select  name="id_comunitario" required><br><br>
+							<?php while($fila=mysqli_fetch_array($comunitario)): ?>
+								<option value="<?=$fila['id_comunitario']?>"><?=$fila['comunitario']?></option>
+							<?php endwhile; ?>
+						</select><br>
 
 
 
 
+						 <label for="id_educativo">ACCIONAR EDUCATIVO: </label>
+						<!-- itero la variable sector -->				
+						<select  name="id_educativo" required><br><br>
+							<?php while($fila=mysqli_fetch_array($educativo)): ?>
+								<option value="<?=$fila['id_educativo']?>"><?=$fila['educativo']?></option>
+							<?php endwhile; ?>
+						</select><br>
+						 
 
 
 
 
+						<label for="id_policial">ACCIONAR POLICIAL: </label>
+						<!-- itero la variable sector -->				
+						<select  name="id_policial" required><br><br>
+							<?php while($fila=mysqli_fetch_array($policial)): ?>
+								<option value="<?=$fila['id_policial']?>"><?=$fila['policial']?></option>
+							<?php endwhile; ?>
+						</select><br>
 
 
 
 
-
-
-
-
-
-						
-						<label for="ACCIONAR">ACCIONAR: </label>
-					<select  name="ACCIONAR" required><br><br>
-						<option value="ACCIONAR DE MEJORA">ACCIONAR DE MEJORA</option>
-						<option value="ACCIONAR COMUNITARIO">ACCIONAR COMUNITARIO</option>  
-						<option value="ACCIONAR EDUCATIVO">ACCIONAR EDUCATIVO</option> 
-						<option value="ACCIONAR POLICIAL">ACCIONAR POLICIAL</option>
-						<option value="AGRADECIMIENTO">AGRADECIMIENTO</option> 
-						
-					</select><br><br>
-		 
+						 <label for="id_agradecimiento">AGRADECIMIENTO: </label>
+						<!-- itero la variable sector -->				
+						<select  name="id_agradecimiento" required><br><br>
+							<?php while($fila=mysqli_fetch_array($agradecimiento)): ?>
+								<option value="<?=$fila['id_agradecimiento']?>"><?=$fila['agradecimiento']?></option>
+							<?php endwhile; ?>
+						</select><br>
+						 
 
 
 						<label for="FECHA">Fecha: </label>
 						<input type="date" id="FECHA" name="FECHA"><br><br>
 
 						<label for="DETALLE">DETALLE:</label>
- 						<textarea name="DETALLE" id="DETALLE" cols="70" rows="10" required></textarea><br><br>
+ 						<textarea namse="DETALLE" id="DETALLE" cols="70" rows="10" required></textarea><br><br>
 
 
 						<label for="CANTIDAD DE BENEFCIARIOS">CANTIDAD DE BENEFICIARIOS: </label>
